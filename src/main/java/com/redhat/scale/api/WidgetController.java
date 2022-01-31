@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -54,7 +55,7 @@ public class WidgetController {
             @ApiResponse(responseCode = "400", description = "Widget with invalid values was provided",
                     content = @Content)
     })
-    @PutMapping("/")
+    @PutMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public Widget saveOrUpdateWidget(@Valid @RequestBody final Widget widget) {
 
