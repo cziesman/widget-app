@@ -8,10 +8,11 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.redhat</groupId>
-	<artifactId>3scale.api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>3scale.api</name>
+	<artifactId>widget-app</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>widget-app</name>
 	<description>Demo 3scale API project for Spring Boot</description>
 
 	<repositories>
@@ -122,6 +123,23 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>openshift-maven-plugin</artifactId>
+				<version>1.5.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jkube</groupId>
+				<artifactId>kubernetes-maven-plugin</artifactId>
+				<version>1.5.1</version>
+<!--				<configuration>-->
+<!--					<images>-->
+<!--						<image>-->
+<!--							<name>redhat/widget-app</name>-->
+<!--						</image>-->
+<!--					</images>-->
+<!--				</configuration>-->
 			</plugin>
 			<plugin>
 				<groupId>org.springdoc</groupId>
