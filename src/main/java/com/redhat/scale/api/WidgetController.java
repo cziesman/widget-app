@@ -30,7 +30,7 @@ public class WidgetController {
             @ApiResponse(responseCode = "404", description = "Widget was not found",
                     content = @Content)
     })
-    @GetMapping("/{id}")
+    @GetMapping("/widget/{id}")
     public Widget findById(@PathVariable long id) {
 
         return widgetService.findById(id);
@@ -42,7 +42,7 @@ public class WidgetController {
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = Widget.class))})
     })
-    @GetMapping("/")
+    @GetMapping("/widgets")
     public Collection<Widget> findWidgets() {
 
         return widgetService.findWidgets();
@@ -55,7 +55,7 @@ public class WidgetController {
             @ApiResponse(responseCode = "400", description = "Widget with invalid values was provided",
                     content = @Content)
     })
-    @PutMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/widget", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public Widget saveOrUpdateWidget(@Valid @RequestBody final Widget widget) {
 
@@ -71,7 +71,7 @@ public class WidgetController {
             @ApiResponse(responseCode = "404", description = "Widget was not found",
                     content = @Content)
     })
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/widget/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteWidget(@PathVariable("id") final Long id) {
 
