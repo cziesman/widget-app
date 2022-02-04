@@ -11,6 +11,6 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI initOpenAPI() {
 
-        return new OpenAPI().info(new Info().title("Widget API").description("OpenAPI").version("v1.0"));
+        return new OpenAPI().info(new Info().title("Widget API Backend").description("The Widget Backend Service").version("1.0"));
     }
 }
